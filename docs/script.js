@@ -96,14 +96,6 @@ function closeFullscreen() {
     }, 400); // Wait for CSS transition (0.4s)
 }
 
-// Print Styles State Management
-window.addEventListener('beforeprint', () => {
-    document.body.classList.add('print-mode');
-});
-
-window.addEventListener('afterprint', () => {
-    document.body.classList.remove('print-mode');
-});
 
 // Print Document Logic
 const printDocBtn = document.getElementById('print-doc-btn');
@@ -156,38 +148,3 @@ function decodeContacts(container = document) {
 
 // Initial call
 decodeContacts();
-
-// Direct PDF Download Logic using html2pdf
-const downloadPdfBtn = document.getElementById('download-pdf-btn');
-if (downloadPdfBtn) {
-    downloadPdfBtn.addEventListener('click', () => {
-        // Target the main container
-        const element = document.querySelector('main');
-
-        // Add a temporary class to indicate exporting state
-        document.body.classList.add('print-mode');
-
-        // Ensure window is scrolled to top before capture
-        window.scrollTo(0, 0);
-
-        const opt = {
-            margin: 0,
-            filename: 'CV_Vincent_Hiribarren.pdf',
-            image: { type: 'jpeg', quality: 0.95 },
-            html2canvas: {
-                scale: 2,
-                useCORS: true,
-                scrollX: 0,
-                scrollY: 0
-            },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            pagebreak: { mode: 'css' }
-        };
-
-        // Call html2pdf
-        html2pdf().set(opt).from(element).save().then(() => {
-            // Remove the temporary class after PDF is generated
-            document.body.classList.remove('print-mode');
-        });
-    });
-}

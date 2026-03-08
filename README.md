@@ -9,7 +9,6 @@ My resume, as a concept of interactive responsive printable web page.
 - Adapt to mobile devices, and paper-style like a real CV for desktop browsing.
 - Interactive sections that can be expanded in fullscreen.
 - Print ready.
-- PDF export using html2pdf.js
 
 ## How to view it
 

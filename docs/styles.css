@@ -724,63 +724,62 @@ body.is-overlay-active {
         margin: 0;
         /* Let the article padding handle the breathing room */
     }
-}
 
-/* Shared Print and PDF Export Styles */
-body.print-mode {
-    zoom: 1.0;
-    font-size: var(--font-size-base);
-    background-color: transparent;
-    color: black;
-    padding: 0;
-    margin: 0;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-}
+    /* Shared Print and PDF Export Styles */
+    body {
+        zoom: 1.0;
+        font-size: var(--font-size-base);
+        background-color: transparent;
+        color: black;
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 
-body.print-mode main {
-    display: block;
-    width: var(--page-width);
-    margin: 0 auto;
-    padding: 0;
-    gap: 0;
-}
+    main {
+        display: block;
+        width: var(--page-width);
+        margin: 0 auto;
+        padding: 0;
+        gap: 0;
+    }
 
-body.print-mode article {
-    height: auto;
-    min-height: calc(var(--page-height) - 0.5mm);
-    margin: 0 auto;
-    box-shadow: none;
-    border-radius: 0;
-    page-break-inside: avoid;
-}
+    article {
+        height: auto;
+        min-height: calc(var(--page-height) - 0.5mm);
+        margin: 0 auto;
+        box-shadow: none;
+        border-radius: 0;
+        page-break-inside: avoid;
+    }
 
+    section {
+        transition: none;
+        border: none;
+        border-radius: 0;
+        pointer-events: none;
+        cursor: default;
+    }
 
-body.print-mode section {
-    transition: none;
-    border: none;
-    border-radius: 0;
-    pointer-events: none;
-    cursor: default;
-}
-
-body.print-mode .section--interactive:hover,
-body.print-mode .skill-item.section--interactive:hover {
-    transform: none;
-    box-shadow: none;
-    margin-top: 0;
-}
+    .section--interactive:hover,
+    .skill-item.section--interactive:hover {
+        transform: none;
+        box-shadow: none;
+        margin-top: 0;
+    }
 
 
-body.print-mode #fullscreen-overlay,
-body.print-mode header {
-    display: none !important;
-}
+    #fullscreen-overlay,
+    header {
+        display: none !important;
+    }
 
-body.print-mode .page__footer {
-    display: flex !important;
-}
+    .page__footer {
+        display: flex !important;
+    }
 
-body.print-mode .section--interactive::after {
-    display: none;
+    body.print-mode .section--interactive::after {
+        display: none;
+    }
 }
