@@ -60,6 +60,7 @@ All other rights are reserved.
 }
 
 body {
+    zoom: var(--zoom-factor);
     font-family: var(--font-family-base);
     background: var(--bg-gradient);
     background-color: var(--bg-color);
@@ -153,11 +154,6 @@ main {
     align-items: center;
     gap: var(--spacing-xl);
     counter-reset: page;
-}
-
-body:not(.print-mode) {
-    zoom: var(--zoom-factor);
-    /* Scale up the screen view without affecting print/PDF output */
 }
 
 /* Page Block */
@@ -594,13 +590,13 @@ body.is-overlay-active {
 @media screen and (max-width: 900px) {
     body {
         font-size: 12pt;
+        zoom: 1.0;
         /* More comfortable for reading on small screens */
     }
 
     main {
         padding: 0 1rem;
         gap: var(--spacing-lg);
-        zoom: 1;
     }
 
     header {
@@ -641,6 +637,14 @@ body.is-overlay-active {
         gap: var(--spacing-lg) !important;
         position: relative !important;
         margin-bottom: var(--spacing-xl) !important;
+    }
+
+    dl {
+        display: block;
+    }
+
+    dd {
+        padding-bottom: var(--spacing-sm);
     }
 
     .columns {
@@ -724,6 +728,7 @@ body.is-overlay-active {
 
 /* Shared Print and PDF Export Styles */
 body.print-mode {
+    zoom: 1.0;
     font-size: var(--font-size-base);
     background-color: transparent;
     color: black;
