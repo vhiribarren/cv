@@ -789,6 +789,39 @@ body.is-overlay-active {
         margin-bottom: 0;
     }
 
+    .content-card--merge-up {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: 1px solid var(--border-color);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Pull the section itself up to cancel the flex gap on the article */
+    section:has(> .content-card--merge-up) {
+        margin-top: calc(-1 * var(--spacing-md));
+    }
+
+    /* Card that announces "the next card continues me" */
+    .content-card--merge-down {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
+        /* clip-path cuts the shadow exactly at the bottom edge, invisibiling it */
+        clip-path: inset(-20px -20px 0px -20px);
+    }
+
+    /* Hide the footer inside an article when a merge-down card is present,
+       so the next article's merge-up card can connect seamlessly */
+    article:has(.content-card--merge-down) cv-footer {
+        display: none;
+    }
+
+    /* Cancel the main gap for the following article */
+    article:has(> section:first-child > .content-card--merge-up) {
+        margin-top: -1rem;
+    }
+
     .skill-item.content-card {
         margin-bottom: 0;
         border-bottom: none;
