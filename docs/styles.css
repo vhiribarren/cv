@@ -9,25 +9,19 @@ All other rights are reserved.
 
 :root {
     --bg-color: #f7f5f0;
-    /* Soft warm ivory / linen for a professional background */
     --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #edeae3 100%);
     --paper-color: #ffffff;
     --text-primary: #1e293b;
-    /* Slate 800 */
     --text-secondary: #475569;
-    /* Slate 600 */
     --accent-color: #2563eb;
-    /* Blue 600 */
     --accent-light: #eff6ff;
     --border-color: #cbd5e1;
-    /* Slate 300 */
 
     --page-width: 210mm;
     --page-height: 297mm;
     --page-padding: 12mm;
     --font-size-base: 9.6pt;
 
-    /* Responsive and Layout Factorization */
     --overlay-max-width: 900px;
     --spacing-xl: 3rem;
     --spacing-lg: 1.5rem;
@@ -39,20 +33,16 @@ All other rights are reserved.
     --header-bg-opacity: 0.85;
     --overlay-bg-opacity: 0.85;
 
-    /* Typography Factorization */
     --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-family-sans: 'Inter', sans-serif;
     --line-height-base: 1.6;
     --line-height-tight: 1.4;
     --zoom-factor: 1.1;
 }
 
-/* Utilities */
 .u-hidden {
     display: none !important;
 }
 
-/* Global layout */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -70,10 +60,8 @@ body {
     color: var(--text-primary);
     line-height: var(--line-height-base);
     padding: 6rem 0 2rem 0;
-    /* Increased top padding to account for fixed header */
     min-height: 100vh;
     font-size: var(--font-size-base);
-    /* Base print-like font size */
 }
 
 p {
@@ -87,7 +75,6 @@ ul {
     padding-bottom: 4px;
 }
 
-/* Header Block */
 header {
     position: fixed;
     top: 0;
@@ -96,7 +83,7 @@ header {
     background-color: rgba(253, 251, 247, var(--header-bg-opacity));
     backdrop-filter: blur(var(--blur-standard));
     -webkit-backdrop-filter: blur(var(--blur-standard));
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,7 +100,7 @@ header {
 .header__title {
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     letter-spacing: 0.02em;
 }
 
@@ -126,7 +113,6 @@ header {
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
-    font-family: var(--font-family-sans);
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -158,7 +144,6 @@ header {
     border: 1px solid var(--border-color);
     padding: 0.6rem 2.2rem 0.6rem 1.2rem;
     border-radius: 6px;
-    font-family: var(--font-family-sans);
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -171,7 +156,8 @@ header {
     max-width: 130px;
 }
 
-.nav-select:hover, .nav-select:focus {
+.nav-select:hover,
+.nav-select:focus {
     background-color: var(--accent-light);
     border-color: var(--accent-color);
     outline: none;
@@ -182,16 +168,14 @@ header {
     color: var(--text-primary);
 }
 
-/* Resume Block */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     counter-reset: page;
 }
 
-/* Page Block */
 article {
     width: var(--page-width);
     height: var(--page-height);
@@ -202,30 +186,11 @@ article {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    /* keep footer pinned to bottom */
     counter-increment: page;
 }
 
-article:nth-of-type(1) {
-    z-index: 10;
-}
-
-article:nth-of-type(2) {
-    z-index: 9;
-}
-
-article:nth-of-type(3) {
-    z-index: 8;
-}
-
-article:nth-of-type(4) {
-    z-index: 7;
-}
-
-/* Sections */
 section {
     border-radius: 8px;
-    background-color: transparent;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: 1px solid transparent;
     position: relative;
@@ -258,12 +223,11 @@ section {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Page Footer */
 cv-footer {
     display: contents;
 }
 
-.page__footer {
+.page-footer {
     position: absolute;
     bottom: var(--page-padding);
     left: var(--page-padding);
@@ -281,26 +245,25 @@ cv-footer {
     z-index: 20;
 }
 
-.page--number::after {
+.page-footer__number::after {
     content: "Page " counter(page) " / 4";
 }
 
-.page__footer__contact {
+.page-footer__contact {
     font-size: 0.75rem;
     color: var(--text-secondary);
 }
 
-.page__footer__contact a {
+.page-footer__contact a {
     color: var(--text-secondary) !important;
     text-decoration: none;
 }
 
-.page__footer__contact a:hover {
+.page-footer__contact a:hover {
     color: var(--accent-color) !important;
     text-decoration: underline;
 }
 
-/* Typography styles */
 h1,
 h2 {
     font-size: 1.25rem;
@@ -354,7 +317,6 @@ dd {
     color: var(--text-secondary);
 }
 
-/* Links */
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -375,20 +337,15 @@ ul {
     color: var(--text-secondary);
 }
 
-/* Section Variants */
-
-
-.resume-header__info {
+.intro__info {
     text-align: left;
 }
 
-.resume-header__bio {
+.intro__bio {
     text-align: justify;
     text-indent: 1rem;
 }
 
-/* Layout constraints */
-/* Grid Layout */
 .columns {
     display: flex;
     gap: 1rem;
@@ -397,8 +354,6 @@ ul {
 .columns__item {
     flex: 1;
 }
-
-
 
 .skills {
     column-count: 2;
@@ -421,7 +376,6 @@ ul {
     z-index: 10;
 }
 
-/* Adjust info icon position on hover to compensate for padding shift */
 .skill-item.section--interactive:hover::after {
     top: 0.65rem;
 }
@@ -438,8 +392,6 @@ ul {
     margin-bottom: var(--spacing-xs);
 }
 
-
-/* Timeline Block */
 .timeline {
     margin-bottom: 1rem;
     position: relative;
@@ -474,13 +426,6 @@ ul {
     white-space: nowrap;
 }
 
-.timeline__sub-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-}
-
 .timeline__sub-header h4 {
     margin-bottom: 0;
 }
@@ -512,14 +457,11 @@ ul {
     font-weight: 500;
 }
 
-/* --- Fullscreen Interaction Styles --- */
-
 /* Classes applied to body when a section is zoomed to prevent scrolling */
 body.is-overlay-active {
     overflow: hidden;
 }
 
-/* The actual overlay container */
 #fullscreen-overlay {
     position: fixed;
     top: 0;
@@ -527,14 +469,12 @@ body.is-overlay-active {
     width: 100vw;
     height: 100vh;
     background-color: rgba(15, 23, 42, var(--overlay-bg-opacity));
-    /* Slate 900 with opacity */
     backdrop-filter: blur(var(--blur-standard));
     -webkit-backdrop-filter: blur(var(--blur-standard));
     z-index: 100;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -545,7 +485,6 @@ body.is-overlay-active {
     pointer-events: auto;
 }
 
-/* The content wrapper inside the overlay */
 #fullscreen-content {
     background-color: var(--paper-color);
     padding: var(--spacing-xl);
@@ -567,7 +506,6 @@ body.is-overlay-active {
     opacity: 1;
 }
 
-/* Adjustments for content inside the fullscreen view */
 #fullscreen-content section {
     padding: 0;
     /* Remove padding for fullscreen */
@@ -598,7 +536,6 @@ body.is-overlay-active {
     gap: 4rem;
 }
 
-/* Close button */
 .close-btn {
     position: absolute;
     top: 2rem;
@@ -626,14 +563,12 @@ body.is-overlay-active {
     height: 24px;
 }
 
-/* Desktop screen adjustments */
 @media screen and (min-width: 901px) {
-    body {
+    main {
         zoom: var(--zoom-factor);
     }
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 900px) {
     body {
         font-size: 12pt;
@@ -659,7 +594,8 @@ body.is-overlay-active {
     }
 
     .header__title {
-        font-size: 0.95rem; /* Slight reduction for fitting */
+        font-size: 0.95rem;
+        /* Slight reduction for fitting */
         line-height: 1.2;
         flex-grow: 1;
         text-align: left;
@@ -692,7 +628,8 @@ body.is-overlay-active {
         background-size: 24px;
     }
 
-    .nav-select:hover, .nav-select:focus {
+    .nav-select:hover,
+    .nav-select:focus {
         background-color: rgba(0, 0, 0, 0.05);
         border-color: transparent;
     }
@@ -702,10 +639,11 @@ body.is-overlay-active {
         width: 40px;
         height: 40px;
         justify-content: center;
-        border-radius: 8px; /* matching the hamburger */
+        border-radius: 8px;
+        /* matching the hamburger */
     }
 
-    .action-btn-text {
+    .action-btn__text {
         display: none;
     }
 
@@ -770,13 +708,6 @@ body.is-overlay-active {
         scroll-margin-top: 5rem;
     }
 
-    .section--interactive:hover {
-        background-color: var(--accent-light);
-        border-color: rgba(37, 99, 235, 0.2);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-
     .content-card {
         background-color: var(--paper-color);
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
@@ -787,6 +718,15 @@ body.is-overlay-active {
 
     .content-card:last-child {
         margin-bottom: 0;
+    }
+
+    /* Card that announces "the next card continues me" */
+    .content-card--merge-down {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
+        /* clip-path cuts the shadow exactly at the bottom edge, invisibiling it */
+        clip-path: inset(-20px -20px 0px -20px);
     }
 
     .content-card--merge-up {
@@ -800,15 +740,6 @@ body.is-overlay-active {
     /* Pull the section itself up to cancel the flex gap on the article */
     section:has(> .content-card--merge-up) {
         margin-top: calc(-1 * var(--spacing-md));
-    }
-
-    /* Card that announces "the next card continues me" */
-    .content-card--merge-down {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        margin-bottom: 0;
-        /* clip-path cuts the shadow exactly at the bottom edge, invisibiling it */
-        clip-path: inset(-20px -20px 0px -20px);
     }
 
     /* Hide the footer inside an article when a merge-down card is present,
@@ -853,22 +784,18 @@ body.is-overlay-active {
         width: 95%;
     }
 
-    .page__footer {
+    .page-footer {
         display: none;
     }
 }
 
-/* --- Print Styles for A4 Paper --- */
 @media print {
     @page {
         size: A4;
         margin: 0;
-        /* Let the article padding handle the breathing room */
     }
 
-    /* Shared Print and PDF Export Styles */
     body {
-        font-size: var(--font-size-base);
         background-color: transparent;
         color: black;
         padding: 0;
@@ -902,18 +829,12 @@ body.is-overlay-active {
         cursor: default;
     }
 
-    .section--interactive:hover {
-        transform: none;
-        box-shadow: none;
-        margin-top: 0;
-    }
-
+    .section--interactive:hover,
     .skill-item.section--interactive:hover {
         transform: none;
         box-shadow: none;
         margin-top: 0;
     }
-
 
     #fullscreen-overlay,
     header {

@@ -132,7 +132,7 @@ if (shareDocBtn) {
             // Fallback: copy URL to clipboard
             try {
                 await navigator.clipboard.writeText(window.location.href);
-                const label = shareDocBtn.querySelector('.action-btn-text');
+                const label = shareDocBtn.querySelector('.action-btn__text');
                 const original = label ? label.textContent : null;
                 if (label) label.textContent = 'Copied!';
                 shareDocBtn.disabled = true;

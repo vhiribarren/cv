@@ -46,7 +46,7 @@ All other rights are reserved.
                     <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="action-btn-text">Share</span>
+                <span class="action-btn__text">Share</span>
             </button>
             <button id="print-doc-btn" class="action-btn" title="Print or PDF">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@ All other rights are reserved.
                         d="M17 17H19C19.5304 17 20.0391 16.7893 20.4142 16.4142C20.7893 16.0391 21 15.5304 21 15V11C21 10.4696 20.7893 9.96086 20.4142 9.58579C20.0391 9.21071 19.5304 9 19 9H5C4.46957 9 3.96086 9.21071 3.58579 9.58579C3.21071 9.96086 3 10.4696 3 11V15C3 15.5304 3.21071 16.0391 3.58579 16.4142C3.96086 16.7893 4.46957 17 5 17H7M9 21H15C15.5304 21 16.0391 20.7893 16.4142 20.4142C16.7893 20.0391 17 19.5304 17 19V15C17 14.4696 16.7893 13.9609 16.4142 13.5858C16.0391 13.2107 15.5304 13 15 13H9C8.46957 13 7.96086 13.2107 7.58579 13.5858C7.21071 13.9609 7 14.4696 7 15V19C7 19.5304 7.21071 20.0391 7.58579 20.4142C7.96086 20.7893 8.46957 21 9 21ZM9 9V5C9 4.46957 9.21071 3.96086 9.58579 3.58579C9.96086 3.21071 10.4696 3 11 3H13C13.5304 3 14.0391 3.21071 14.4142 3.58579C14.7893 3.96086 15 4.46957 15 5V9H9Z"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="action-btn-text">Print or PDF</span>
+                <span class="action-btn__text">Print or PDF</span>
             </button>
         </div>
     </header>
@@ -81,7 +81,7 @@ All other rights are reserved.
 
                 <div class="content-card">
                     <div class="columns">
-                        <div class="columns__item resume-header__info">
+                        <div class="columns__item intro__info">
                             <dl>
                                 <dt>E-mail:</dt>
                                 <dd>
@@ -100,7 +100,7 @@ All other rights are reserved.
                             </dl>
                         </div>
 
-                        <div class="columns__item resume-header__info">
+                        <div class="columns__item intro__info">
                             <dl>
                                 <dt>This CV:</dt>
                                 <dd><a href="https://www.alea.net/cv/" target="_blank"
@@ -117,7 +117,7 @@ All other rights are reserved.
                 </div>
                 <div class="content-card">
                     <div class="columns">
-                        <div class="columns__item resume-header__bio">
+                        <div class="columns__item intro__bio">
                             <p>
                                 As technical lead or senior engineer, my focuses are generic <strong>software
                                     engineering</strong>
@@ -128,7 +128,7 @@ All other rights are reserved.
                                     alerting, and infrastructure as code</strong> in production context.
                             </p>
                         </div>
-                        <div class="columns__item resume-header__bio">
+                        <div class="columns__item intro__bio">
                             <p>
                                 I link the business and the technical
                                 worlds. My job is to <strong>understand</strong> requirements, <strong>learn</strong>
@@ -744,13 +744,13 @@ All other rights are reserved.
     </div>
 
     <template id="footer-template">
-        <footer class="page__footer">
+        <footer class="page-footer">
             <span>Vincent Hiribarren - Curriculum Vitae</span>
-            <span class="page__footer__contact">
+            <span class="page-footer__contact">
                 <span class="js-contact" data-o="KjkkeCs/JjsgFikzNSQmNC4kLj5pIikzJDguIA==" data-t="m">email</span> |
                 <span class="js-contact" data-o="bnR2cGRnZnV2cG5nYWdldH0=" data-t="t">phone</span>
             </span>
-            <span class="page--number"></span>
+            <span class="page-footer__number"></span>
         </footer>
     </template>
 </body>
