@@ -100,9 +100,18 @@ function closeFullscreen() {
 // Print Document Logic
 const printDocBtn = document.getElementById('print-doc-btn');
 if (printDocBtn) {
-    printDocBtn.addEventListener('click', () => {
-        window.print();
-    });
+    const triggerPrint = () => {
+        if (typeof window.print === 'function') {
+            window.print();
+        } else {
+            alert('Printing is not supported on your device. Use the browser\'s share/print feature.');
+        }
+    };
+
+    printDocBtn.addEventListener('click', triggerPrint);
+    // Some mobile browsers may not fire "click" reliably for buttons,
+    // so also listen for touchend to ensure the action runs.
+    printDocBtn.addEventListener('touchend', triggerPrint);
 }
 
 // Custom Footer Component
