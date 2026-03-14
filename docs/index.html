@@ -28,6 +28,17 @@ All other rights are reserved.
 <body>
 
     <header>
+        <select id="section-nav" class="nav-select" aria-label="Navigate to section" title="Menu">
+            <option value="" disabled selected>Go to...</option>
+            <option value="#intro">👤 Intro & Bio</option>
+            <option value="#expertise">⚡ Technical Expertise</option>
+            <option value="#experience">💼 Professional Experience</option>
+            <option value="#certifications">🏆 Certifications</option>
+            <option value="#education">🎓 Education</option>
+            <option value="#languages">🇫🇷 Languages</option>
+            <option value="#ai-usage">🤖 AI/LLM usage</option>
+            <option value="#projects">🔨 Side projects</option>
+        </select>
         <div class="header__title">CV Vincent Hiribarren</div>
         <div class="header__actions">
             <button id="print-doc-btn" class="action-btn">
@@ -45,7 +56,7 @@ All other rights are reserved.
 
         <!-- Page 1 -->
         <article>
-            <section>
+            <section id="intro">
                 <h1>Vincent HIRIBARREN<br>Senior Software & Cloud Engineer</h1>
                 <div class="content-card">
                     <div class="columns">
@@ -127,7 +138,7 @@ All other rights are reserved.
                 </div>
             </section>
 
-            <section>
+            <section id="expertise">
 
                 <h2>⚡ Technical Expertise</h2>
                 <div class="skills">
@@ -251,7 +262,7 @@ All other rights are reserved.
 
         <!-- Page 2 -->
         <article>
-            <section>
+            <section id="experience">
                 <h2>💼 Professional Experience</h2>
 
                 <div class="timeline content-card">
@@ -630,7 +641,7 @@ All other rights are reserved.
 
             <div class="columns">
                 <div class="columns__item">
-                    <section>
+                    <section id="certifications">
                         <h2>🏆 Certifications</h2>
                         <div class="timeline content-card">
                             <div class="timeline__header">
@@ -642,7 +653,7 @@ All other rights are reserved.
                                     Certified Solutions Architect - Associate</a></p>
                         </div>
                     </section>
-                    <section>
+                    <section id="education">
                         <h2>🎓 Education</h2>
                         <div class="timeline content-card">
                             <div class="timeline__header">
@@ -668,7 +679,7 @@ All other rights are reserved.
 
                 <div class="columns__item">
 
-                    <section>
+                    <section id="languages">
                         <h2>🇫🇷 Languages</h2>
                         <div class="content-card">
                             <dl>
@@ -683,7 +694,7 @@ All other rights are reserved.
                         </div>
                     </section>
 
-                    <section>
+                    <section id="ai-usage">
                         <h2>🤖 AI/LLM usage</h2>
                         <div class="content-card">
                             <p><em>Regular usage of LLM models with Antigravity and Kiro.</em></p>
@@ -693,7 +704,7 @@ All other rights are reserved.
                         </div>
                     </section>
 
-                    <section>
+                    <section id="projects">
                         <h2>🔨 Some side projects</h2>
                         <div class="content-card">
                             <p><a href="https://github.com/vhiribarren/beacon-simulator-android">Android Beacon

@@ -114,6 +114,22 @@ if (printDocBtn) {
     printDocBtn.addEventListener('touchend', triggerPrint);
 }
 
+// Section Navigation Dropdown
+const sectionNav = document.getElementById('section-nav');
+if (sectionNav) {
+    sectionNav.addEventListener('change', (e) => {
+        const targetId = e.target.value;
+        if (targetId) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Reset select so "Jump to..." is visible again
+                e.target.value = "";
+            }
+        }
+    });
+}
+
 // Custom Footer Component
 class CVFooter extends HTMLElement {
     connectedCallback() {
