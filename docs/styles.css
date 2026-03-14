@@ -60,7 +60,6 @@ All other rights are reserved.
 }
 
 body {
-    zoom: var(--zoom-factor);
     font-family: var(--font-family-base);
     background: var(--bg-gradient);
     background-color: var(--bg-color);
@@ -582,11 +581,17 @@ body.is-overlay-active {
     height: 24px;
 }
 
+/* Desktop screen adjustments */
+@media screen and (min-width: 901px) {
+    body {
+        zoom: var(--zoom-factor);
+    }
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 900px) {
     body {
         font-size: 12pt;
-        zoom: 1.0;
         padding-top: 5rem;
     }
 
@@ -733,7 +738,6 @@ body.is-overlay-active {
 
     /* Shared Print and PDF Export Styles */
     body {
-        zoom: 1.0;
         font-size: var(--font-size-base);
         background-color: transparent;
         color: black;
