@@ -114,6 +114,40 @@ if (printDocBtn) {
     printDocBtn.addEventListener('touchend', triggerPrint);
 }
 
+// Share Document Logic
+const shareDocBtn = document.getElementById('share-doc-btn');
+if (shareDocBtn) {
+    const triggerShare = async () => {
+        const shareData = {
+            title: document.title,
+            url: window.location.href,
+        };
+        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+            try {
+                await navigator.share(shareData);
+            } catch (e) {
+                // User cancelled or share failed — silently ignore
+            }
+        } else {
+            // Fallback: copy URL to clipboard
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                const label = shareDocBtn.querySelector('.action-btn-text');
+                const original = label ? label.textContent : null;
+                if (label) label.textContent = 'Copied!';
+                shareDocBtn.disabled = true;
+                setTimeout(() => {
+                    if (label && original) label.textContent = original;
+                    shareDocBtn.disabled = false;
+                }, 2000);
+            } catch (e) {
+                alert('Copy this URL to share: ' + window.location.href);
+            }
+        }
+    };
+    shareDocBtn.addEventListener('click', triggerShare);
+}
+
 // Section Navigation Dropdown
 const sectionNav = document.getElementById('section-nav');
 if (sectionNav) {
