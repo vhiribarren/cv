@@ -198,7 +198,7 @@ section {
 }
 
 .section--interactive {
-    cursor: pointer;
+    cursor: zoom-in;
 }
 
 .section--interactive::after {
@@ -463,6 +463,7 @@ body.is-overlay-active {
 }
 
 #fullscreen-overlay {
+    font-size: 12pt;
     position: fixed;
     top: 0;
     left: 0;
@@ -564,9 +565,11 @@ body.is-overlay-active {
 }
 
 @media screen and (min-width: 901px) {
+
     main {
         zoom: var(--zoom-factor);
     }
+
 }
 
 @media screen and (max-width: 900px) {
