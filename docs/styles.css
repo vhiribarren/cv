@@ -685,10 +685,10 @@ body.is-overlay-active {
     }
 
     section {
-        background-color: var(--paper-color);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        padding: var(--spacing-sm);
-        border-radius: 8px;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
         margin: 0;
     }
 
@@ -699,20 +699,29 @@ body.is-overlay-active {
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
-    .skill-item {
-        background-color: transparent;
-        box-shadow: none;
-        padding: var(--spacing-xs) 1rem var(--spacing-xs) 0;
-        border-radius: 0;
+    .content-card {
+        background-color: var(--paper-color);
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+        padding: var(--spacing-md);
+        border-radius: 8px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .content-card:last-child {
         margin-bottom: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    .skill-item.section--interactive::after {
-        top: 0.8rem;
+    .skill-item.content-card {
+        margin-bottom: 0;
+        border-bottom: none;
     }
 
-    .skill-item.section--interactive:hover {
+    .content-card.section--interactive::after {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .content-card.section--interactive:hover {
         background-color: var(--accent-light);
         border-radius: 8px;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -721,12 +730,11 @@ body.is-overlay-active {
         z-index: 2;
     }
 
-    .skill-item:last-child {
-        border-bottom: none;
-    }
-
     .skills {
         column-count: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
     }
 
     #fullscreen-content {
