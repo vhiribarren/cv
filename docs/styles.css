@@ -73,7 +73,7 @@ body {
 }
 
 p {
-    margin-bottom: 4px;
+    margin-bottom: var(--spacing-md);
 }
 
 ul {
@@ -166,7 +166,7 @@ article {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* keep footer pinned to bottom */
+    /* keep footer pinned to bottom */
     counter-increment: page;
 }
 
@@ -188,7 +188,6 @@ article:nth-of-type(4) {
 
 /* Sections */
 section {
-    padding-bottom: 1rem;
     border-radius: 8px;
     background-color: transparent;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -223,11 +222,21 @@ section {
 }
 
 /* Page Footer */
+cv-footer {
+    display: contents;
+}
+
 .page__footer {
+    position: absolute;
+    bottom: var(--page-padding);
+    left: var(--page-padding);
+    right: var(--page-padding);
     padding-top: 0.5rem;
     border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    line-height: 1;
     font-size: 0.8rem;
     color: var(--text-secondary);
     opacity: 0.7;
@@ -293,6 +302,7 @@ dl {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.1rem var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 dt {
@@ -333,7 +343,6 @@ ul {
 
 .resume-header__info {
     text-align: left;
-    padding-bottom: 1rem;
 }
 
 .resume-header__bio {
@@ -360,7 +369,6 @@ ul {
 }
 
 .skill-item {
-    padding-bottom: 0.5rem;
     flex: none;
     break-inside: avoid;
     margin-bottom: var(--spacing-xs);
@@ -441,7 +449,7 @@ ul {
 }
 
 .timeline__sub-item {
-    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
     padding-left: 1rem;
     border-left: 2px solid var(--border-color);
 }
@@ -636,20 +644,23 @@ body.is-overlay-active {
         padding: 0;
         background-color: transparent;
         box-shadow: none;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-md);
         position: relative;
     }
 
     dl {
         display: block;
+        margin-bottom: 0;
+
     }
 
     dd {
-        padding-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
     }
 
     .columns {
         flex-direction: column;
+        gap: var(--spacing-md);
     }
 
     .columns__item {
@@ -691,7 +702,7 @@ body.is-overlay-active {
     .skill-item {
         background-color: transparent;
         box-shadow: none;
-        padding: var(--spacing-md) 1rem var(--spacing-md) 0;
+        padding: var(--spacing-xs) 1rem var(--spacing-xs) 0;
         border-radius: 0;
         margin-bottom: 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -788,12 +799,5 @@ body.is-overlay-active {
     #fullscreen-overlay,
     header {
         display: none !important;
-    }
-
-    .page__footer {
-        position: absolute;
-        bottom: var(--page-padding);
-        left: var(--page-padding);
-        right: var(--page-padding);
     }
 }
