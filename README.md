@@ -2,13 +2,16 @@
 
 My resume, as a concept of interactive responsive printable web page.
 
+- Designed print-first: perfectly formats as a physical paper CV when printing.
 - Browsable with Github Pages.
 - Pure simple native HTML, CSS and Javascript.
+- Seamlessly embeddable in other web pages automatically adjusting to content height.
+- Automatic Dark Mode support via native CSS variables.
+- Native sharing support using the Web Share API.
 - A subtle addition of Web Component for repetitive elements.
-- Obfuscated contact information using [obfuscate.py](scripts/obfuscate.py).
+- Obfuscated contact information to prevent scraping.
 - Adapt to mobile devices, and paper-style like a real CV for desktop browsing.
 - Interactive sections that can be expanded in fullscreen.
-- Print ready.
 
 ## How to view it
 
