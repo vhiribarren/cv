@@ -763,15 +763,16 @@ All other rights are reserved.
 
     </main>
 
-    <!-- Overlay container for fullscreen transition -->
-    <div id="fullscreen-overlay" class="u-hidden">
-        <button id="close-btn" class="close-btn">
+    <!-- Overlay and Drawer for section details -->
+    <div id="detail-overlay" class="detail-overlay"></div>
+    <div id="detail-drawer" class="detail-drawer">
+        <button id="close-drawer-btn" class="close-btn" aria-label="Close details">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
             </svg>
         </button>
-        <div id="fullscreen-content"></div>
+        <div id="detail-content" class="detail-drawer__content"></div>
     </div>
 
     <template id="footer-template">

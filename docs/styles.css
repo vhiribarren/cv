@@ -31,7 +31,7 @@ All other rights are reserved.
     --blur-standard: 8px;
     --accent-hover: #1d4ed8;
     --header-bg-opacity: 0.85;
-    --overlay-bg-opacity: 0.85;
+    --overlay-bg-opacity: 0.40;
 
     --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --line-height-base: 1.6;
@@ -509,7 +509,7 @@ body.is-overlay-active {
     overflow: hidden;
 }
 
-#fullscreen-overlay {
+.detail-overlay {
     font-size: 12pt;
     position: fixed;
     top: 0;
@@ -523,74 +523,68 @@ body.is-overlay-active {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#fullscreen-overlay:not(.u-hidden) {
+.detail-overlay.is-open {
     opacity: 1;
     pointer-events: auto;
 }
 
-#fullscreen-content {
+.detail-drawer {
+    position: fixed;
+    z-index: 101;
     background-color: var(--paper-color);
-    padding: var(--spacing-xl);
-    border-radius: 12px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    max-width: var(--overlay-max-width);
-    width: 90%;
-    max-height: 90vh;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1), visibility 0s 0.4s;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-drawer.is-open {
+    visibility: visible;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1), visibility 0s 0s;
+}
+
+.detail-drawer__content {
+    flex: 1;
     overflow-y: auto;
-    position: relative;
-    /* Transformation handled by JS */
-    transform: scale(0.95);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: var(--spacing-xl);
 }
 
-#fullscreen-overlay:not(.u-hidden) #fullscreen-content {
-    transform: scale(1);
-    opacity: 1;
-}
-
-#fullscreen-content section {
+.detail-drawer__content section {
     padding: 0;
-    /* Remove padding for fullscreen */
     border: none;
     background: transparent;
     transform: none;
-    /* remove hover effects */
     box-shadow: none;
     cursor: default;
 }
 
-#fullscreen-content .section--interactive:hover {
+.detail-drawer__content .section--interactive:hover {
     background-color: transparent;
     border-color: transparent;
     transform: none;
     box-shadow: none;
 }
 
-#fullscreen-content .section--interactive::after {
+.detail-drawer__content .section--interactive::after {
     display: none;
 }
 
-#fullscreen-content h2 {
+.detail-drawer__content h2 {
     font-size: 1.75rem;
 }
 
-#fullscreen-content .columns {
+.detail-drawer__content .columns {
     gap: 4rem;
 }
 
 .close-btn {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
     background: transparent;
     border: none;
-    color: white;
+    color: var(--text-primary);
     width: 48px;
     height: 48px;
     cursor: pointer;
@@ -599,11 +593,11 @@ body.is-overlay-active {
     justify-content: center;
     align-items: center;
     transition: background-color 0.2s;
-    z-index: 101;
+    z-index: 102;
 }
 
 .close-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
 }
 
 .close-btn svg {
@@ -613,6 +607,24 @@ body.is-overlay-active {
 
 @media screen and (min-width: 901px) {
 
+    .detail-drawer {
+        top: 0;
+        right: 0;
+        width: 450px;
+        max-width: 90vw;
+        height: 100vh;
+        transform: translateX(100%);
+    }
+
+    .detail-drawer.is-open {
+        transform: translateX(0);
+    }
+
+    .detail-drawer .close-btn {
+        top: 1rem;
+        left: -3.5rem;
+    }
+
     main {
         zoom: var(--zoom-factor);
     }
@@ -620,6 +632,28 @@ body.is-overlay-active {
 }
 
 @media screen and (max-width: 900px) {
+
+    .detail-drawer {
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        max-height: 85vh;
+        min-height: 40vh;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        transform: translateY(100%);
+        padding-top: 3rem;
+    }
+
+    .detail-drawer.is-open {
+        transform: translateY(0);
+    }
+
+    .detail-drawer .close-btn {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
     body {
         font-size: 12pt;
     }
@@ -826,9 +860,8 @@ body.is-overlay-active {
         gap: var(--spacing-sm);
     }
 
-    #fullscreen-content {
+    .detail-drawer__content {
         padding: var(--spacing-lg);
-        width: 95%;
     }
 
     .page-footer {
@@ -883,7 +916,8 @@ body.is-overlay-active {
         margin-top: 0;
     }
 
-    #fullscreen-overlay,
+    .detail-overlay,
+    .detail-drawer,
     header {
         display: none !important;
     }

@@ -11,9 +11,10 @@ All other rights are reserved.
 const allDetailsBlocks = document.querySelectorAll('.section__detail');
 const sections = Array.from(allDetailsBlocks).map(detail => detail.parentElement);
 
-const overlay = document.getElementById('fullscreen-overlay');
-const overlayContent = document.getElementById('fullscreen-content');
-const closeBtn = document.getElementById('close-btn');
+const detailOverlay = document.getElementById('detail-overlay');
+const detailDrawer = document.getElementById('detail-drawer');
+const detailContent = document.getElementById('detail-content');
+const closeBtn = document.getElementById('close-drawer-btn');
 
 // --- Header Sync logic ---
 // Allows the parent page to synchronize the header position
@@ -66,15 +67,15 @@ sections.forEach(section => {
 closeBtn.addEventListener('click', closeFullscreen);
 
 // Close on click outside the content
-overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
+detailOverlay.addEventListener('click', (e) => {
+    if (e.target === detailOverlay) {
         closeFullscreen();
     }
 });
 
 // Close on Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !overlay.classList.contains('u-hidden')) {
+    if (e.key === 'Escape' && detailOverlay.classList.contains('is-open')) {
         closeFullscreen();
     }
 });
@@ -99,25 +100,27 @@ function openFullscreen(section) {
     clonedContent.removeAttribute('id');
 
     // Clear previous content and append new
-    overlayContent.innerHTML = '';
-    overlayContent.appendChild(clonedContent);
+    detailContent.innerHTML = '';
+    detailContent.appendChild(clonedContent);
 
-    // Show overlay
-    overlay.classList.remove('u-hidden');
+    // Show overlay and drawer
+    detailOverlay.classList.add('is-open');
+    detailDrawer.classList.add('is-open');
 }
 
 function closeFullscreen() {
     if (!activeSection) return;
 
-    // Hide overlay
-    overlay.classList.add('u-hidden');
+    // Hide overlay and drawer
+    detailOverlay.classList.remove('is-open');
+    detailDrawer.classList.remove('is-open');
 
     // Restore body scrolling
     document.body.classList.remove('is-overlay-active');
 
     // Clear references and content after transition finishes
     setTimeout(() => {
-        overlayContent.innerHTML = '';
+        detailContent.innerHTML = '';
         activeSection = null;
     }, 400); // Wait for CSS transition (0.4s)
 }
