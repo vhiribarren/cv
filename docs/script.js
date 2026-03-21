@@ -207,3 +207,25 @@ function decodeContacts(container = document) {
 
 // Initial call
 decodeContacts();
+
+// --- iFrame Resizer logic ---
+// When this page is embedded in an iframe, it reports its height to the parent
+// to allow the parent to resize the iframe accordingly.
+function reportHeight() {
+    if (window.parent !== window) {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: 'cv-height', height: height }, '*');
+    }
+}
+
+// Report height on load and whenever the content might change
+window.addEventListener('load', reportHeight);
+window.addEventListener('resize', reportHeight);
+
+// MutationObserver to watch for content changes (like zoomed sections)
+const resizerObserver = new MutationObserver(reportHeight);
+resizerObserver.observe(document.body, { 
+    attributes: true, 
+    childList: true, 
+    subtree: true 
+});

@@ -26,6 +26,32 @@ For instance using Python:
 python3 -m http.server
 ```
 
+## How to embed in another page
+
+This page supports automatic height adjustment when embedded in an `iframe`. 
+
+### 1. HTML Snippet
+```html
+<iframe id="cv-iframe" 
+        src="https://www.alea.net/cv/" 
+        style="width: 100%; border: none; overflow: hidden;" 
+        scrolling="no">
+</iframe>
+```
+
+### 2. Javascript Snippet
+Add this to the parent page to handle the automatic resizing:
+```javascript
+window.addEventListener('message', function(e) {
+    if (e.data.type === 'cv-height') {
+        const iframe = document.getElementById('cv-iframe');
+        if (iframe) {
+            iframe.style.height = e.data.height + 'px';
+        }
+    }
+});
+```
+
 ## License
 
 Copyright (c) 2026 Vincent Hiribarren
