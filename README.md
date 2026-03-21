@@ -5,7 +5,7 @@ My resume, as a concept of interactive responsive printable web page.
 - Browsable with Github Pages.
 - Pure simple native HTML, CSS and Javascript.
 - A subtle addition of Web Component for repetitive elements.
-- Obfuscated contact information.
+- Obfuscated contact information using [obfuscate.py](scripts/obfuscate.py).
 - Adapt to mobile devices, and paper-style like a real CV for desktop browsing.
 - Interactive sections that can be expanded in fullscreen.
 - Print ready.
@@ -51,6 +51,23 @@ window.addEventListener('message', function(e) {
     }
 });
 ```
+
+## How to protect contact information
+
+To prevent bots from easily scraping your email and phone number, the contact information is obfuscated in the HTML and decoded at runtime by `script.js`.
+
+Use the provided Python script to generate the obfuscated strings:
+
+```bash
+./scripts/obfuscate.py "your.email@example.com"
+```
+
+Then, update the `data-o` attribute in your HTML:
+```html
+<span class="js-contact" data-o="...OBFUSCATED_STRING..." data-t="m">email</span>
+```
+- `data-t="m"` for mailto links.
+- `data-t="t"` for tel links.
 
 ## License
 
