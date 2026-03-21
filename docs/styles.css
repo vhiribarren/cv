@@ -59,7 +59,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: var(--line-height-base);
-    padding: 6rem 0 2rem 0;
+    padding: 0 0 2rem 0;
     min-height: 100vh;
     font-size: var(--font-size-base);
 }
@@ -76,10 +76,13 @@ ul {
 }
 
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
+    transform: translateY(var(--header-offset, 0));
+    will-change: opacity;
+    transition: opacity 0.4s ease-in-out;
     background-color: rgba(253, 251, 247, var(--header-bg-opacity));
     backdrop-filter: blur(var(--blur-standard));
     -webkit-backdrop-filter: blur(var(--blur-standard));
@@ -174,6 +177,7 @@ main {
     align-items: center;
     gap: 2rem;
     counter-reset: page;
+    padding-top: 20px;
 }
 
 article {
@@ -413,6 +417,15 @@ ul {
     margin-bottom: 0;
 }
 
+header.is-scrolling {
+    opacity: 0 !important;
+    transition: opacity 0.05s ease-out;
+}
+
+header>* {
+    margin-bottom: 0;
+}
+
 .timeline .date {
     display: block;
     font-size: 0.85rem;
@@ -575,12 +588,10 @@ body.is-overlay-active {
 @media screen and (max-width: 900px) {
     body {
         font-size: 12pt;
-        padding-top: 5rem;
     }
 
     main {
-        padding: 0 1rem 1rem;
-        /* almost no padding; let content sit flush */
+        padding: 20px 1rem 0 1rem;
         gap: 1rem;
     }
 
@@ -592,7 +603,6 @@ body.is-overlay-active {
         justify-content: flex-start;
         align-items: center;
         height: auto;
-        position: fixed;
         gap: 0.5rem;
     }
 

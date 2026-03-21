@@ -15,6 +15,32 @@ const overlay = document.getElementById('fullscreen-overlay');
 const overlayContent = document.getElementById('fullscreen-content');
 const closeBtn = document.getElementById('close-btn');
 
+// --- Header Sync logic ---
+// Allows the parent page to synchronize the header position
+// if the iframe is resized to full height.
+let revealTimeout = null;
+window.addEventListener('message', (e) => {
+    if (e.data.type === 'cv-offset' && typeof e.data.offset === 'number') {
+        const header = document.querySelector('header');
+        if (header) {
+            header.classList.add('is-scrolling');
+        }
+
+        // Debounce reveal
+        if (revealTimeout) clearTimeout(revealTimeout);
+        
+        requestAnimationFrame(() => {
+            document.documentElement.style.setProperty('--header-offset', `${e.data.offset}px`);
+        });
+
+        revealTimeout = setTimeout(() => {
+            if (header) {
+                header.classList.remove('is-scrolling');
+            }
+        }, 1200);
+    }
+});
+
 // Store the original parent and next sibling of the currently expanded section
 // so we can put it back exactly where it was.
 let originalParent = null;
