@@ -51,6 +51,17 @@ All other rights are reserved.
         }
     });
 
+    // Prevent parent scrolling via the overlay
+    const preventScroll = (e) => e.preventDefault();
+    const stopPropagation = (e) => e.stopPropagation();
+
+    detailOverlay.addEventListener('wheel', preventScroll, { passive: false });
+    detailOverlay.addEventListener('touchmove', preventScroll, { passive: false });
+
+    // Allow scrolling inside the drawer, but stop propagation so overlay doesn't prevent it
+    detailDrawer.addEventListener('wheel', stopPropagation, { passive: false });
+    detailDrawer.addEventListener('touchmove', stopPropagation, { passive: false });
+
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && detailOverlay.classList.contains('is-open')) {
@@ -67,6 +78,11 @@ All other rights are reserved.
         // Check if there is a detailed content block
         const detailBlock = section.querySelector('.section__detail');
         if (!detailBlock) return;
+
+        // Capture current view offset to position the drawer statically (especially for iframe embeds)
+        const headerOffset = getComputedStyle(document.documentElement).getPropertyValue('--header-offset').trim();
+        const topPos = (headerOffset && headerOffset !== '0px' && headerOffset !== '') ? headerOffset : `${window.scrollY}px`;
+        document.documentElement.style.setProperty('--drawer-static-top', topPos);
 
         // Clone the content to stick in the overlay
         const clonedContent = detailBlock.cloneNode(true);
@@ -267,11 +283,37 @@ All other rights are reserved.
  * ============================================================================
  */
 (function initIFrameIntegration() {
+    // Skip entirely when not embedded
+    if (window.parent === window) return;
+
+    let resizerObserver = null;
+
     // --- 1. Height Reporting ---
     function reportHeight() {
-        if (window.parent !== window) {
-            const height = document.documentElement.scrollHeight;
-            window.parent.postMessage({ type: 'cv-height', height: height }, '*');
+        // Disconnect observer temporarily to prevent infinite loops from style changes
+        if (resizerObserver) resizerObserver.disconnect();
+
+        const oldBodyMin = document.body.style.minHeight;
+        const oldHtmlMin = document.documentElement.style.minHeight;
+        
+        // Force elements to shrink to fit their content
+        document.body.style.setProperty('min-height', '0px', 'important');
+        document.documentElement.style.setProperty('min-height', '0px', 'important');
+
+        const height = document.body.offsetHeight;
+
+        document.body.style.minHeight = oldBodyMin;
+        document.documentElement.style.minHeight = oldHtmlMin;
+
+        window.parent.postMessage({ type: 'cv-height', height: height }, '*');
+
+        // Re-observe
+        if (resizerObserver) {
+            resizerObserver.observe(document.body, { 
+                attributes: true, 
+                childList: true, 
+                subtree: true 
+            });
         }
     }
 
@@ -280,7 +322,7 @@ All other rights are reserved.
     window.addEventListener('resize', reportHeight);
 
     // MutationObserver to watch for content changes (like zoomed sections)
-    const resizerObserver = new MutationObserver(reportHeight);
+    resizerObserver = new MutationObserver(reportHeight);
     resizerObserver.observe(document.body, { 
         attributes: true, 
         childList: true, 
@@ -291,6 +333,21 @@ All other rights are reserved.
     let revealTimeout = null;
     window.addEventListener('message', (e) => {
         if (e.data.type === 'cv-offset' && typeof e.data.offset === 'number') {
+            if (!document.body.classList.contains('is-dynamic-iframe')) {
+                document.body.classList.add('is-dynamic-iframe');
+                
+                // Track actual visible height in parent
+                try {
+                    const obs = new IntersectionObserver(entries => {
+                        const rect = entries[0].intersectionRect;
+                        if (rect && rect.height > 0) {
+                            document.documentElement.style.setProperty('--vh-parent', `${rect.height}px`);
+                        }
+                    });
+                    obs.observe(document.documentElement);
+                } catch (err) {}
+            }
+
             const header = document.querySelector('header');
             if (header) {
                 header.classList.add('is-scrolling');
