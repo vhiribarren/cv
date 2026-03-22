@@ -258,21 +258,24 @@ All other rights are reserved.
  * ============================================================================
  */
 (function initWebComponents() {
-    class CVFooter extends HTMLElement {
+    class CVPage extends HTMLElement {
         connectedCallback() {
-            const template = document.getElementById('footer-template');
-            if (template) {
-                this.appendChild(template.content.cloneNode(true));
-                // Trigger contact de-obfuscation for the newly inserted elements
-                document.dispatchEvent(new CustomEvent('cv:decode-contacts', { 
-                    detail: { container: this } 
-                }));
+            const template = document.getElementById('page-template');
+            if (!template) return;
+
+            if (!this.shadowRoot) {
+                const shadowRoot = this.attachShadow({ mode: 'open' });
+                shadowRoot.appendChild(template.content.cloneNode(true));
             }
+
+            document.dispatchEvent(new CustomEvent('cv:decode-contacts', {
+                detail: { container: this.shadowRoot || this }
+            }));
         }
     }
-    
-    if (!customElements.get('cv-footer')) {
-        customElements.define('cv-footer', CVFooter);
+
+    if (!customElements.get('cv-page')) {
+        customElements.define('cv-page', CVPage);
     }
 })();
 
@@ -295,7 +298,7 @@ All other rights are reserved.
 
         const oldBodyMin = document.body.style.minHeight;
         const oldHtmlMin = document.documentElement.style.minHeight;
-        
+
         // Force elements to shrink to fit their content
         document.body.style.setProperty('min-height', '0px', 'important');
         document.documentElement.style.setProperty('min-height', '0px', 'important');
@@ -309,10 +312,10 @@ All other rights are reserved.
 
         // Re-observe
         if (resizerObserver) {
-            resizerObserver.observe(document.body, { 
-                attributes: true, 
-                childList: true, 
-                subtree: true 
+            resizerObserver.observe(document.body, {
+                attributes: true,
+                childList: true,
+                subtree: true
             });
         }
     }
@@ -323,10 +326,10 @@ All other rights are reserved.
 
     // MutationObserver to watch for content changes (like zoomed sections)
     resizerObserver = new MutationObserver(reportHeight);
-    resizerObserver.observe(document.body, { 
-        attributes: true, 
-        childList: true, 
-        subtree: true 
+    resizerObserver.observe(document.body, {
+        attributes: true,
+        childList: true,
+        subtree: true
     });
 
     // --- 2. Header Synchronization ---
@@ -335,7 +338,7 @@ All other rights are reserved.
         if (e.data.type === 'cv-offset' && typeof e.data.offset === 'number') {
             if (!document.body.classList.contains('is-dynamic-iframe')) {
                 document.body.classList.add('is-dynamic-iframe');
-                
+
                 // Track actual visible height in parent
                 try {
                     const obs = new IntersectionObserver(entries => {
@@ -345,7 +348,7 @@ All other rights are reserved.
                         }
                     });
                     obs.observe(document.documentElement);
-                } catch (err) {}
+                } catch (err) { }
             }
 
             const header = document.querySelector('header');
@@ -355,7 +358,7 @@ All other rights are reserved.
 
             // Debounce reveal
             if (revealTimeout) clearTimeout(revealTimeout);
-            
+
             requestAnimationFrame(() => {
                 document.documentElement.style.setProperty('--header-offset', `${e.data.offset}px`);
             });

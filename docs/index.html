@@ -17,7 +17,7 @@ All other rights are reserved.
     <meta name="theme-color" content="#ffffff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'sha256-UP0QZg7irvSMvOBz9mH2PIIE28+57UiavRfeVea0l3g='; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://cdnjs.cloudflare.com;">
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'sha256-UP0QZg7irvSMvOBz9mH2PIIE28+57UiavRfeVea0l3g=' 'sha256-Qj1FEZfSnNZCfvKCx8cWyaQUb3Y94tyMxWw/MptlHNI='; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://cdnjs.cloudflare.com;">
     <title>Vincent Hiribarren - Curriculum Vitae</title>
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -62,7 +62,7 @@ All other rights are reserved.
     <main>
 
         <!-- Page 1 -->
-        <article>
+        <cv-page>
             <section id="intro">
                 <h1>Vincent HIRIBARREN<br>Senior Software & Cloud Engineer</h1>
                 <div class="content-card">
@@ -263,12 +263,10 @@ All other rights are reserved.
 
                 </div>
             </section>
-
-            <cv-footer></cv-footer>
-        </article>
+        </cv-page>
 
         <!-- Page 2 -->
-        <article>
+        <cv-page>
             <section id="experience">
                 <h2>💼 Professional Experience</h2>
 
@@ -413,12 +411,10 @@ All other rights are reserved.
 
                 </div>
             </section>
-
-            <cv-footer></cv-footer>
-        </article>
+        </cv-page>
 
         <!-- Page 3 -->
-        <article>
+        <cv-page>
             <section>
                 <div class="timeline content-card">
                     <div class="timeline__header">
@@ -573,11 +569,10 @@ All other rights are reserved.
 
                 </div>
             </section>
-            <cv-footer></cv-footer>
-        </article>
+        </cv-page>
 
         <!-- Page 4 -->
-        <article>
+        <cv-page>
 
             <section>
                 <div class="timeline content-card content-card--merge-up">
@@ -757,9 +752,7 @@ All other rights are reserved.
                     </section>
                 </div>
             </div>
-
-            <cv-footer></cv-footer>
-        </article>
+        </cv-page>
 
     </main>
 
@@ -775,15 +768,19 @@ All other rights are reserved.
         <div id="detail-content" class="detail-drawer__content"></div>
     </div>
 
-    <template id="footer-template">
-        <footer class="page-footer">
-            <span>Vincent Hiribarren - Curriculum Vitae</span>
-            <span class="page-footer__contact">
-                <span class="js-contact" data-o="KjkkeCs/JjsgFikzNSQmNC4kLj5pIikzJDguIA==" data-t="m">email</span> |
-                <span class="js-contact" data-o="bnR2cGRnZnV2cG5nYWdldH0=" data-t="t">phone</span>
-            </span>
-            <span class="page-footer__number"></span>
-        </footer>
+    <template id="page-template">
+        <link rel="stylesheet" href="styles.css">
+        <article>
+            <slot></slot>
+            <footer class="page-footer">
+                <span>Vincent Hiribarren - Curriculum Vitae</span>
+                <span class="page-footer__contact">
+                    <span class="js-contact" data-o="KjkkeCs/JjsgFikzNSQmNC4kLj5pIikzJDguIA==" data-t="m">email</span> |
+                    <span class="js-contact" data-o="bnR2cGRnZnV2cG5nYWdldH0=" data-t="t">phone</span>
+                </span>
+                <span class="page-footer__number"></span>
+            </footer>
+        </article>
     </template>
 </body>
 

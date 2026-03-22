@@ -261,7 +261,7 @@ section {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-cv-footer {
+cv-page {
     display: contents;
 }
 
@@ -943,9 +943,10 @@ body.is-overlay-active {
         min-height: 300px;
         max-height: var(--vh-parent, 750px);
         /* Remove overflow-y and overscroll-behavior so we don't clip the close button */
-        padding-bottom: 2rem; /* Add padding so it doesn't end abruptly */
+        padding-bottom: 2rem;
+        /* Add padding so it doesn't end abruptly */
     }
-    
+
     /* Ensure scrolling happens exactly inside the content, and restrict scroll chaining */
     .is-dynamic-iframe .detail-drawer__content {
         overscroll-behavior: contain;
@@ -962,23 +963,24 @@ body.is-overlay-active {
         max-height: calc(var(--vh-parent, 600px) - 2rem);
         /* Remove overflow-y and overscroll-behavior so we don't clip */
         padding-bottom: 2rem;
-        
+
         /* Standard bottom sheet appearance */
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        
+
         /* Start completely hidden below the view */
         transform: translateY(0);
         opacity: 1;
     }
+
     .is-dynamic-iframe .detail-drawer.is-open {
         /* Slide UP by its own exact height so its bottom hits the bottom of the screen */
         transform: translateY(-100%);
         opacity: 1;
     }
-    
+
     /* Ensure scrolling happens exactly inside the content, and restrict scroll chaining */
     .is-dynamic-iframe .detail-drawer__content {
         overscroll-behavior: contain;
