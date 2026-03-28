@@ -270,7 +270,7 @@ cv-page {
     right: var(--page-padding);
     padding-top: 0.5rem;
     border-top: 1px solid var(--border-color);
-    display: flex;
+    display: var(--footer-display, flex);
     justify-content: space-between;
     align-items: flex-end;
     line-height: 1;
@@ -779,6 +779,7 @@ body.is-overlay-active {
         background-color: transparent;
         box-shadow: none;
         padding: 0;
+        border: none;
         border-radius: 0;
         margin: 0;
         scroll-margin-top: 5rem;
@@ -801,32 +802,46 @@ body.is-overlay-active {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         margin-bottom: 0;
+        padding-bottom: 0.7rem;
+        z-index: 3;
+        position: relative;
         /* clip-path cuts the shadow exactly at the bottom edge, invisibiling it */
         clip-path: inset(-20px -20px 0px -20px);
+    }
+
+    .content-card--merge-down,
+    .content-card--merge-down.timeline,
+    .content-card--merge-down .timeline__sub-item:last-child {
+        margin-bottom: 0 !important;
     }
 
     .content-card--merge-up {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        border-top: 1px solid var(--border-color);
+        border-top: none;
+        padding-top: 0;
         position: relative;
         z-index: 2;
     }
 
     /* Pull the section itself up to cancel the flex gap on the article */
     section:has(> .content-card--merge-up) {
-        margin-top: calc(-1 * var(--spacing-md));
+        margin-top: 0;
+    }
+
+    cv-page {
+        display: block;
     }
 
     /* Hide the footer inside an article when a merge-down card is present,
        so the next article's merge-up card can connect seamlessly */
-    article:has(.content-card--merge-down) cv-footer {
-        display: none;
+    cv-page:has(.content-card--merge-down) {
+        --footer-display: none;
     }
 
-    /* Cancel the main gap for the following article */
-    article:has(> section:first-child > .content-card--merge-up) {
-        margin-top: -1rem;
+    /* Cancel the main gap for the following article plus 1px to ensure overlap (SubPixel Gap fix) */
+    cv-page:has(> section:first-child > .content-card--merge-up) {
+        margin-top: calc(-1rem - 1px);
     }
 
     .skill-item.content-card {
