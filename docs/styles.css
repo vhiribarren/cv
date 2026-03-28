@@ -957,7 +957,8 @@ body.is-overlay-active {
 
     .detail-overlay,
     .detail-drawer,
-    header {
+    header,
+    .section--interactive::after {
         display: none !important;
     }
 }
