@@ -210,7 +210,6 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    counter-reset: page;
     padding-top: 20px;
 }
 
@@ -224,7 +223,6 @@ article {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    counter-increment: page;
 }
 
 section {
@@ -281,10 +279,6 @@ cv-page {
     opacity: 0.7;
     background-color: var(--paper-color);
     z-index: 20;
-}
-
-.page-footer__number::after {
-    content: "Page " counter(page) " / 4";
 }
 
 .page-footer__contact {

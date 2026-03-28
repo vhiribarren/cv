@@ -271,6 +271,15 @@ All other rights are reserved.
             document.dispatchEvent(new CustomEvent('cv:decode-contacts', {
                 detail: { container: this.shadowRoot || this }
             }));
+
+            const allPages = document.querySelectorAll('cv-page');
+            const index = Array.from(allPages).indexOf(this) + 1;
+            const total = allPages.length || 4;
+            const numberContainer = this.shadowRoot.querySelector('.page-footer__number');
+            if (numberContainer) {
+                numberContainer.textContent = `Page ${index} / ${total}`;
+            }
+
         }
     }
 
