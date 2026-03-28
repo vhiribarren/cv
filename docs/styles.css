@@ -394,6 +394,7 @@ ul {
 }
 
 .skills {
+    -webkit-column-count: 2;
     column-count: 2;
     column-gap: var(--spacing-md);
 }
@@ -875,11 +876,17 @@ body.is-overlay-active {
         margin: 0;
     }
 
+    html,
+    body {
+        height: 100%;
+    }
+
     body {
         background-color: transparent;
         color: black;
         padding: 0;
         margin: 0;
+        min-height: auto;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -887,18 +894,56 @@ body.is-overlay-active {
     main {
         display: block;
         width: var(--page-width);
+        height: 100%;
         margin: 0 auto;
         padding: 0;
         gap: 0;
     }
 
+    cv-page {
+        display: block;
+        height: 100%;
+        page-break-after: always;
+        break-after: page;
+    }
+
+    cv-page:last-of-type {
+        page-break-after: auto;
+        break-after: auto;
+    }
+
     article {
-        height: auto;
-        min-height: calc(var(--page-height) - 0.5mm);
-        margin: 0 auto;
-        box-shadow: none;
-        border-radius: 0;
-        page-break-inside: avoid;
+        display: block;
+        height: 100% !important;
+        min-height: 0 !important;
+    }
+
+    /* SAFARI ONLY: Safari's WebKit engine totally fails to print multi-columns 
+       with variable heights. We isolate Safari using its exclusive system font 
+       shorthand and force a 2-column Grid with slightly tighter margins to precisely match. */
+    @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+        .skills {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            column-gap: var(--spacing-md);
+            row-gap: 0;
+        }
+
+        .skill-item {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+        }
+
+        dl,
+        p,
+        h1,
+        h2 {
+            margin-bottom: var(--spacing-xs) !important;
+        }
+
+        ul {
+            margin-top: 0 !important;
+        }
     }
 
     section {
