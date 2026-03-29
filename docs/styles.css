@@ -260,7 +260,7 @@ section {
 }
 
 cv-page {
-    display: contents;
+    display: block;
 }
 
 .page-footer {
@@ -624,6 +624,16 @@ body.is-overlay-active {
         zoom: var(--zoom-factor);
     }
 
+}
+
+@media screen and (min-width: 2000px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: none;
+    }
 }
 
 @media screen and (max-width: 900px) {
