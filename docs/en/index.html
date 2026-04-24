@@ -7,13 +7,13 @@ unmodified form, provided that this copyright notice is preserved.
 
 All other rights are reserved.
 -->
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Vincent Hiribarren">
-    <meta name="description" content="Curriculum Vitae de Vincent Hiribarren, Ingénieur Senior Cloud & Logiciel.">
+    <meta name="description" content="Curriculum Vitae of Vincent Hiribarren, a Senior Software & Cloud Engineer.">
     <meta name="theme-color" content="#ffffff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy"
@@ -28,37 +28,37 @@ All other rights are reserved.
 <body>
 
     <header>
-        <select id="section-nav" class="nav-select" aria-label="Naviguer vers une section" title="Menu">
-            <option value="" disabled selected>Aller à…</option>
+        <select id="section-nav" class="nav-select" aria-label="Navigate to section" title="Menu">
+            <option value="" disabled selected>Go to...</option>
             <option value="#intro">👤 Intro & Bio</option>
-            <option value="#expertise">⚡ Expertise technique</option>
-            <option value="#experience">💼 Expérience pro.</option>
+            <option value="#expertise">⚡ Technical Expertise</option>
+            <option value="#experience">💼 Professional Experience</option>
             <option value="#certifications">🏆 Certifications</option>
-            <option value="#education">🎓 Formation</option>
-            <option value="#languages">🇫🇷 Langues</option>
-            <option value="#projects">🔨 Projets perso</option>
+            <option value="#education">🎓 Education</option>
+            <option value="#languages">🇫🇷 Languages</option>
+            <option value="#projects">🔨 Side projects</option>
         </select>
         <div class="header__title">CV Vincent Hiribarren</div>
         <div class="header__actions">
-            <a href="../en/" class="lang-toggle" title="Switch to English">
-                <span class="lang-toggle__item">🇬🇧<span class="lang-toggle__text"> EN</span></span>
+            <a href="../fr/" class="lang-toggle" title="Passer en français">
+                <span class="lang-toggle__item is-active" title="English">🇬🇧<span class="lang-toggle__text"> EN</span></span>
                 <span class="lang-toggle__sep">|</span>
-                <span class="lang-toggle__item is-active" title="Français">🇫🇷<span class="lang-toggle__text"> FR</span></span>
+                <span class="lang-toggle__item">🇫🇷<span class="lang-toggle__text"> FR</span></span>
             </a>
-            <button id="share-doc-btn" class="action-btn" title="Partager">
+            <button id="share-doc-btn" class="action-btn" title="Share">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="action-btn__text">Partager</span>
+                <span class="action-btn__text">Share</span>
             </button>
-            <button id="print-doc-btn" class="action-btn" title="Imprimer ou PDF">
+            <button id="print-doc-btn" class="action-btn" title="Print or PDF">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M17 17H19C19.5304 17 20.0391 16.7893 20.4142 16.4142C20.7893 16.0391 21 15.5304 21 15V11C21 10.4696 20.7893 9.96086 20.4142 9.58579C20.0391 9.21071 19.5304 9 19 9H5C4.46957 9 3.96086 9.21071 3.58579 9.58579C3.21071 9.96086 3 10.4696 3 11V15C3 15.5304 3.21071 16.0391 3.58579 16.4142C3.96086 16.7893 4.46957 17 5 17H7M9 21H15C15.5304 21 16.0391 20.7893 16.4142 20.4142C16.7893 20.0391 17 19.5304 17 19V15C17 14.4696 16.7893 13.9609 16.4142 13.5858C16.0391 13.2107 15.5304 13 15 13H9C8.46957 13 7.96086 13.2107 7.58579 13.5858C7.21071 13.9609 7 14.4696 7 15V19C7 19.5304 7.21071 20.0391 7.58579 20.4142C7.96086 20.7893 8.46957 21 9 21ZM9 9V5C9 4.46957 9.21071 3.96086 9.58579 3.58579C9.96086 3.21071 10.4696 3 11 3H13C13.5304 3 14.0391 3.21071 14.4142 3.58579C14.7893 3.96086 15 4.46957 15 5V9H9Z"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="action-btn__text">Imprimer / PDF</span>
+                <span class="action-btn__text">Print or PDF</span>
             </button>
         </div>
     </header>
@@ -69,22 +69,22 @@ All other rights are reserved.
         <cv-page>
             <section id="intro">
                 <div class="intro__header">
-                    <h1>Vincent HIRIBARREN<br>Ingénieur Senior Cloud & Logiciel</h1>
+                    <h1>Vincent HIRIBARREN<br>Senior Software & Cloud Engineer</h1>
                     <div class="qrcode" aria-hidden="true">
-                        <span class="qrcode__label">Lien vers ce CV</span>
-                        <img class="qrcode__image" src="../assets/qrcode-cv.svg" alt="QR Code lien vers le CV">
+                        <span class="qrcode__label">Link to this CV</span>
+                        <img class="qrcode__image" src="../assets/qrcode-cv.svg" alt="QR Code Link to CV">
                     </div>
                 </div>
                 <div class="content-card">
                     <div class="columns">
                         <div class="columns__item">
                             <p>
-                                Français – né en 1980<br>
-                                Lille, France - mobilité possible à Paris</p>
+                                French – born 1980<br>
+                                Lille, France - possible to work at Paris</p>
                         </div>
                         <div class="columns__item">
-                            <p> Diplôme d'ingénieur informatique et télécoms<br>
-                                Permis B</p>
+                            <p> Software engineering and telecommunications degree<br>
+                                Driving license</p>
                         </div>
                     </div>
                 </div>
@@ -93,32 +93,32 @@ All other rights are reserved.
                     <div class="columns">
                         <div class="columns__item intro__info">
                             <dl>
-                                <dt>E-mail :</dt>
+                                <dt>E-mail:</dt>
                                 <dd>
                                     <span class="js-contact" data-o="KjkkeCs/JjsgFikzNSQmNC4kLj5pIikzJDguIA=="
                                         data-t="m">email</span>
 
                                 </dd>
-                                <dt>Tél : </dt>
+                                <dt>Tel: </dt>
                                 <dd>
                                     <span class="js-contact" data-o="bn92c2Bnb3B2c2JnYWdldH0=" data-t="t">phone</span>
                                 </dd>
-                                <dt>Web :</dt>
+                                <dt>Web:</dt>
                                 <dd>
-                                    <a href="https://www.alea.net/contact/">formulaire</a>
+                                    <a href="https://www.alea.net/contact/">web form</a>
                                 </dd>
                             </dl>
                         </div>
 
                         <div class="columns__item intro__info">
                             <dl>
-                                <dt>Ce CV :</dt>
+                                <dt>This CV:</dt>
                                 <dd><a href="https://www.alea.net/cv/" target="_blank"
                                         rel="noopener noreferrer">www.alea.net/cv</a></dd>
-                                <dt>LinkedIn :</dt>
+                                <dt>LinkedIn:</dt>
                                 <dd><a href="https://www.linkedin.com/in/vhiribarren/" target="_blank"
                                         rel="noopener noreferrer">www.linkedin.com/in/vhiribarren</a></dd>
-                                <dt>GitHub :</dt>
+                                <dt>GitHub:</dt>
                                 <dd><a href="https://github.com/vhiribarren" target="_blank"
                                         rel="noopener noreferrer">github.com/vhiribarren</a></dd>
                             </dl>
@@ -129,21 +129,20 @@ All other rights are reserved.
                     <div class="columns">
                         <div class="columns__item intro__bio">
                             <p>
-                                Lead technique ou ingénieur senior, j'ai une large expertise en
-                                <strong>ingénierie logicielle</strong> (web, desktop, mobile, embarqué,
-                                serveur) alliée à une maîtrise de l'<strong>infrastructure cloud
-                                    AWS</strong> et des <strong>réseaux</strong>. J'applique
-                                <strong>sécurité, scalabilité, monitoring, alerting et infrastructure
-                                    as code</strong> en contexte de production.
+                                As a technical lead or senior engineer, I bring broad <strong>software
+                                    engineering</strong> expertise (web, desktop, mobile, embedded, server) combined
+                                with <strong>AWS cloud infrastructure</strong> and <strong>network</strong> knowledge. I
+                                apply <strong>security, scalability, monitoring, alerting, and infrastructure as
+                                    code</strong> practices in production contexts.
                             </p>
                         </div>
                         <div class="columns__item intro__bio">
                             <p>
-                                Je fais le lien entre métier et technique :
-                                analyse des besoins, conception du système cible, livraison
-                                en autonomie ou en coordonnant une équipe de développeurs.
-                                J'utilise les outils IA de manière responsable, en révisant,
-                                simplifiant et refactorant le code généré pour la clarté.
+                                I bridge the business and technical
+                                worlds by reviewing requirements, architecting the target system, and
+                                delivering the solution independently or by coordinating a team of developers.
+                                I leverage AI tools responsibly, reviewing, simplifying,
+                                and refactoring generated code to ensure maintainability and clarity.
                             </p>
                         </div>
                     </div>
@@ -152,117 +151,117 @@ All other rights are reserved.
 
             <section id="expertise">
 
-                <h2>⚡ Expertise technique</h2>
+                <h2>⚡ Technical Expertise</h2>
                 <div class="skills">
 
                     <div class="skill-item content-card">
-                        <h3>Langages de programmation</h3>
+                        <h3>Programming languages</h3>
                         <dl>
-                            <dt>Actuel :</dt>
+                            <dt>Currently:</dt>
                             <dd><strong>Python</strong>, Rust</dd>
-                            <dt>Courant :</dt>
+                            <dt>Regular:</dt>
                             <dd><strong>Java, JavaScript</strong>, TypeScript</dd>
-                            <dt>Passé :</dt>
+                            <dt>Past:</dt>
                             <dd>C, C++, C#, Objective-C, Kotlin, Swift, ActionScript (AS3/Flex)</dd>
-                            <dt>Étude :</dt>
+                            <dt>Learning:</dt>
                             <dd>Haskell</dd>
                         </dl>
                         <div class="section__detail u-hidden">
-                            <h2>Langages de programmation</h2>
-                            <p><strong>Python :</strong> </p>
+                            <h2>Programming languages</h2>
+                            <p><strong>Python:</strong> </p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
                         </div>
                     </div>
 
                     <div class="skill-item content-card">
-                        <h3>Technologies web</h3>
+                        <h3>Web technologies</h3>
                         <dl>
-                            <dt>Langages :</dt>
+                            <dt>Languages:</dt>
                             <dd>HTML5, CSS3, JavaScript (ES6+ &amp; legacy), TypeScript</dd>
-                            <dt>Frameworks :</dt>
+                            <dt>Frameworks:</dt>
                             <dd>React, Node.js, Web Components</dd>
-                            <dt>API navigateur :</dt>
-                            <dd>Web APIs, WebAssembly avec Rust</dd>
-                            <dt>Protocoles :</dt>
+                            <dt>Browser APIs:</dt>
+                            <dd>Web APIs, WebAssembly with Rust</dd>
+                            <dt>Protocols:</dt>
                             <dd>HTTPS, REST, Websockets</dd>
                         </dl>
                     </div>
 
                     <div class="skill-item content-card">
-                        <h3>Cloud &amp; systèmes distribués (AWS)</h3>
+                        <h3>Cloud &amp; distributed systems (AWS)</h3>
                         <dl>
-                            <dt>PaaS :</dt>
+                            <dt>PaaS:</dt>
                             <dd>EC2, Load Balancers, Auto Scaling, ECS Fargate...</dd>
-                            <dt>Serverless :</dt>
+                            <dt>Serverless:</dt>
                             <dd>Lambda, Step Functions, SQS, SNS, Kinesis, S3, CloudFront, API Gateway...</dd>
-                            <dt>Réseau</dt>
+                            <dt>Network</dt>
                             <dd>VPC, Route53, Transit Gateway, WAF, Network Firewall ...</dd>
-                            <dt>Sys Ops :</dt>
+                            <dt>Sys Ops:</dt>
                             <dd>Organization, IAM Identity Center, SCP, ...</dd>
                         </dl>
                     </div>
 
                     <div class="skill-item content-card">
-                        <h3>Sécurité</h3>
+                        <h3>Security</h3>
                         <dl>
-                            <dt>Auth :</dt>
+                            <dt>Auth:</dt>
                             <dd>OAuth2, OpenID Connect, JWT, SAML</dd>
-                            <dt>Renforc. :</dt>
-                            <dd>OWASP, sécurisation backend et frontend, prog. défensive</dd>
-                            <dt>Pen tests :</dt>
-                            <dd>Coordination des tests d'intrusion et conformité sécurité</dd>
-                            <dt>Certificats :</dt>
-                            <dd>Gestion des certificats TLS / X.509</dd>
+                            <dt>Hardening:</dt>
+                            <dd>OWASP, backend and frontend hardening, defensive programming</dd>
+                            <dt>Pen tests:</dt>
+                            <dd>Penetration testing coordination and security compliance processes</dd>
+                            <dt>Certificates:</dt>
+                            <dd>TLS / X.509 certificates management</dd>
                         </dl>
                     </div>
 
                     <div class="skill-item content-card">
-                        <h3>Architecture & bonnes pratiques</h3>
+                        <h3>Architecture & Engineering Practices</h3>
                         <dl>
-                            <dt>Architecture :</dt>
-                            <dd>UML, C4, Conception pour la scalabilité, l'observabilité, la maintenabilité et
-                                l'efficacité.</dd>
-                            <dt>Conception :</dt>
-                            <dd>Microservices, Clean Architecture, SOLID, design patterns, injection de dépendances</dd>
-                            <dt>Tests :</dt>
-                            <dd>tests unitaires, mocking, conception testable</dd>
-                            <dt>Qualité :</dt>
-                            <dd>linters, formatters, pre-commit hooks, analyse statique</dd>
-                            <dt>SDLC :</dt>
-                            <dd>Git workflows, correctifs sécu., config multi-env.</dd>
+                            <dt>Architecture:</dt>
+                            <dd>UML, C4, Designing systems for scalability, observability, maintainability and cost
+                                efficiency.</dd>
+                            <dt>Design:</dt>
+                            <dd>Microservices, Clean Architecture, SOLID, design patterns, dependency injection</dd>
+                            <dt>Testing:</dt>
+                            <dd>unit testing, mocking, testable design</dd>
+                            <dt>Code Quality:</dt>
+                            <dd>linters, formatters, pre-commit hooks, static analysis</dd>
+                            <dt>SDLC:</dt>
+                            <dd>Git workflows, security fixes, multi-environment configuration</dd>
                         </dl>
                     </div>
 
                     <div class="skill-item content-card">
                         <h3>Infrastructure &amp; DevOps</h3>
-                        <p>Infrastructures reproductibles et auditables.</p>
+                        <p>Reproducible and auditable infrastructures.</p>
                         <dl>
-                            <dt>Outils actuels :</dt>
+                            <dt>Current tools:</dt>
                             <dd>Terraform / OpenTofu, Cloudformation</dd>
-                            <dt>Usage passé :</dt>
+                            <dt>Past use:</dt>
                             <dd>Docker, AWS CDK, Ansible</dd>
                         </dl>
                     </div>
 
                     <div class="skill-item content-card">
-                        <h3>OS & Réseau</h3>
+                        <h3>OS & Network</h3>
                         <dl>
-                            <dt>Usage :</dt>
-                            <dd>macOS (principal), Linux (aussi prog. sys.), Windows</dd>
-                            <dt>Réseau :</dt>
-                            <dd>IP, TCP, UDP, DNS, TLS, firewalling, routage, NAT, SSH</dd>
+                            <dt>Usage:</dt>
+                            <dd>macOS (mainly), Linux (also sys. programming), Windows</dd>
+                            <dt>Network:</dt>
+                            <dd>IP, TCP, UDP, DNS, TLS, firewalling, routing, NAT, SSH</dd>
                         </dl>
                     </div>
 
                     <div class="skill-item content-card">
-                        <h3>Bases de données</h3>
+                        <h3>Databases</h3>
                         <dl>
-                            <dt>Actuel :</dt>
+                            <dt>Current:</dt>
                             <dd>DynamoDB</dd>
-                            <dt>Passé :</dt>
+                            <dt>Past:</dt>
                             <dd>MariaDB / SQL, MongoDB, ElasticSearch</dd>
-                            <dt>Concepts :</dt>
-                            <dd>Modélisation, normalisation, indexation</dd>
+                            <dt>Concepts:</dt>
+                            <dd>Data modeling, normalization, indexing</dd>
                         </dl>
                     </div>
 
@@ -273,7 +272,7 @@ All other rights are reserved.
         <!-- Page 2 -->
         <cv-page>
             <section id="experience">
-                <h2>💼 Expérience professionnelle</h2>
+                <h2>💼 Professional Experience</h2>
 
                 <div class="timeline content-card">
                     <div class="timeline__header">
@@ -282,20 +281,20 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>DCP B2B Risk Management Solutions - plateforme AWS</h4>
-                            <span class="date">2024 – Auj.</span>
+                            <h4>DCP B2B Risk Management Solutions - AWS-based platform</h4>
+                            <span class="date">2024 – Today</span>
                         </div>
-                        <p><strong>Rôle :</strong> Product Owner et Tech Lead de la plateforme hébergeant
-                            les solutions sur AWS</p>
+                        <p><strong>Role:</strong> Platform Product Owner and Tech Lead of the infrastructure hosting all
+                            solutions on AWS</p>
                         <ul>
-                            <li>Encadrer et développer avec une équipe d'ingénieurs cloud</li>
-                            <li>Superviser les évolutions de la fondation hébergeant les produits de 5 feature teams</li>
-                            <li>Responsabilité admin, support aux feature teams, gestion des demandes et incidents,
-                                support L3</li>
-                            <li>Déployer les composants sécurité, réseau et infra commune à l'échelle sur plus de
-                                100 comptes AWS via infrastructure as code et automation</li>
-                            <li>Contribution à l'architecture DCP en tant qu'expert AWS, réseau et bonnes pratiques
-                                cloud</li>
+                            <li>Manage and develop with a team of cloud engineers</li>
+                            <li>Oversee platform foundation evolutions hosting products from 5 teams feature teams</li>
+                            <li>With admin responsability, support to all feature teams, manage incoming requests and
+                                issues, L3 support</li>
+                            <li>Ensure deployment of security, network components and common infrastructure at scales on
+                                more than 100 AWS accounts using infrastructure as code and automation</li>
+                            <li>Contribution to the whole DCP architecture by being expert on AWS services, networking,
+                                and cloud best practices</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">Python</span>
@@ -331,23 +330,24 @@ All other rights are reserved.
                     </div>
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>TEX Telematics Platform - Refonte full AWS Serverless</h4>
+                            <h4>TEX Telematics Platform - Full AWS Serverles revamp</h4>
                             <span class="date">2018 – 2024</span>
                         </div>
 
-                        <p><strong>Projet : </strong>Suite au succès du serverless sur Fizzy (cf.
-                            ci-dessous), et pour rendre TEX (cf. ci-dessous) plus robuste face au
-                            turnover, baisses de budget, maintenance, exigences de sécurité et
-                            difficultés des data scientists à déployer, TEX a été refondu
-                            avec succès.
+                        <p><strong>Project: </strong>Based on the succes of using serverless technologies on Fizzy (cf.
+                            below), and in order to make the TEX project (cf. below) more robust against turnover,
+                            budget decrease,
+                            constant maintenance, security requirements, and difficulties for data scientist to deploy
+                            new models, the TEX project was fully revised with success.
                         </p>
-                        <p><strong>Rôle :</strong> Leader technique et architecte</p>
+                        <p><strong>Role:</strong> Technical leader and architect</p>
                         <ul>
-                            <li>Conception et refonte de la plateforme télématique TEX, d'une archi EC2
-                                vers du full serverless AWS.</li>
-                            <li>Encadrement d'une équipe de 3 ingénieurs cloud et logiciel</li>
-                            <li>4 projets en production traitant des données live de boîtiers
-                                télématiques, voitures connectées ou serveurs tiers.</li>
+                            <li>Architect and redesign of the legacy telematics TEX platform based on an EC2
+                                architecture, to a full AWS serverless project leveraging AWS
+                                technologies.</li>
+                            <li>Lead and coordinate a team of 3 cloud and software engineers</li>
+                            <li>4 projects in production processing live data coming from telematics boxes, connected
+                                cars or intermediate servers.</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">OAuth2</span>
@@ -383,18 +383,18 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Fizzy – Tarification pour assurance retard de vol</h4>
+                            <h4>Fizzy – Pricing platform for flight delay insurance service</h4>
                             <span class="date">2018</span>
                         </div>
-                        <p><strong>Projet : </strong>Fizzy était un produit d'assurance à remboursement
-                            automatique en cas de retard de vol, via blockchain pour garantir
-                            le paiement.
+                        <p><strong>Project: </strong>Fizzy was an insurance product attempt based on automatic refund in
+                            case of flight delay, and leveraging a blockchain to guarantee the refund.
                         </p>
-                        <p><strong>Rôle :</strong> Architecte cloud et ingénieur logiciel</p>
+                        <p><strong>Role:</strong> Cloud architect and software engineer</p>
                         <ul>
-                            <li>Usage d'AWS serverless et managé, test réel pour les projets futurs</li>
-                            <li>Adapter et mettre en prod. le moteur de pricing des data scientists</li>
-                            <li>Formation d'une équipe de run pour transférer les développements</li>
+                            <li>Usage of AWS with serverless and managed components as a real field test for futur
+                                projects</li>
+                            <li>Adapt and put in production the pricing engine developer by data scientists</li>
+                            <li>Training of a business-as-usual team to transfer what was developed</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">Python</span>
@@ -429,10 +429,9 @@ All other rights are reserved.
                             <h4>CCA – Claim Cost Analyzer</h4>
                             <span class="date">2017</span>
                         </div>
-                        <p><strong>Projet :</strong> Outil web graphique pour actuaires, analyse des coûts
-                            carrosserie auto.
+                        <p><strong>Project:</strong> Webapp graphical tool for actuaries to analyze car bodyshop costs.
                         </p>
-                        <p><strong>Rôle :</strong> Lead tech et développeur front/back</p>
+                        <p><strong>Role:</strong> Tech leader and front/back developer</p>
                         <div class="tech-pills">
                             <span class="tech-pills__item">MongoDB</span>
                             <span class="tech-pills__item">ElasticSearch</span>
@@ -452,11 +451,11 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Connected Home – Plateforme de services domotiques via MyFox et Hue</h4>
+                            <h4>Connected Home – Platform to push home services using MyFox and Hue</h4>
                             <span class="date">2016</span>
                         </div>
-                        <p><strong>Rôle :</strong> Lead tech en charge du service d'agrégation
-                            d'événements avec MyFox et Hue</p>
+                        <p><strong>Role:</strong> Tech leader in charge of implementing the event hub aggregation
+                            service with MyFox and Hue</p>
                         <div class="tech-pills">
                             <span class="tech-pills__item">Python</span>
                             <span class="tech-pills__item">JavaScript / Node.js</span>
@@ -475,19 +474,19 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>TEX – Télématique auto – Plateforme AXA assurance comportement conducteur</h4>
+                            <h4>TEX – Car Telematics – AXA platform for car driving behavior insurance</h4>
                             <span class="date">2014 – 2017</span>
                         </div>
-                        <p><strong>Projet : </strong>Plateforme AXA de télématique : collecte des données
-                            de conduite, scoring du comportement pour créer des produits d'assurance.
-                            Alimente l'offre YouDrive de Direct Assurance.</p>
-                        <p><strong>Rôle :</strong> Architecte et dev. d'une plateforme de collecte pour
-                            véhicules connectés (back-end, mobile, devops)</p>
+                        <p><strong>Project: </strong>AXA telematics platform which collect driving data, process them,
+                            and score driver behavior to build insurance products. It currently powers Direct Assurance
+                            YouDrive offer.</p>
+                        <p><strong>Role:</strong> Architect, develop and maintain a data collection platform for
+                            connected cars (back-end, mobile, devops)</p>
                         <ul>
-                            <li>Prototypage end-to-end de la première plateforme</li>
-                            <li>Étude et implémentation avec beacons BLE</li>
-                            <li>Lead technique de l'équipe mobile</li>
-                            <li>Gestion sous-traitants et entretiens pour dev. mobile, devops, backend et
+                            <li>Full end-to-end prototyping of the very first platform</li>
+                            <li>Study and implementation with BLE Beacons</li>
+                            <li>Mobile developer team technical lead</li>
+                            <li>Subcontractor management and job interviews for mobile development, devops, backend, and
                                 frontend</li>
                         </ul>
                         <div class="tech-pills">
@@ -527,16 +526,16 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Bell Labs – Ingénieur logiciel en prototypage rapide</h4>
+                            <h4>Bell Labs – Software engineer in quick prototyping</h4>
                             <span class="date">2010 – 2014</span>
                         </div>
-                        <p><strong>Rôle :</strong> Conception et prototypage rapide de maquettes avec des
-                            designers d'interaction</p>
+                        <p><strong>Role:</strong> Design and quick implementation of software mockups with interaction
+                            designers</p>
                         <ul>
-                            <li>Maquette de jeu WebRTC</li>
-                            <li>Drone 4G LTE avec Parrot</li>
-                            <li>Maquette robot 4G LTE</li>
-                            <li>Avatar physique avec Kinect</li>
+                            <li>WebRTC game mockup</li>
+                            <li>4G LTE Drone with Parrot</li>
+                            <li>4G LTE Robot mockup</li>
+                            <li>Physical Avatar with Kinect</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">ActionScript3 / Flex</span>
@@ -553,15 +552,15 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Bell Labs – Ingénieur de recherche</h4>
+                            <h4>Bell Labs – Research Engineer</h4>
                             <span class="date">2008 – 2010</span>
                         </div>
-                        <p><strong>Rôle :</strong> Projet de mix services IMS et réseaux sociaux Internet</p>
+                        <p><strong>Role:</strong> Project on mixing IMS services with Internet social networks</p>
                         <ul>
-                            <li>Leader dans le projet européen SERVERY</li>
-                            <li>Architecte pour intégrer IMS dans Facebook</li>
-                            <li>Service d'infrastructure IMS sociale</li>
-                            <li>Application Facebook embarquant un client IMS</li>
+                            <li>Task leader in European project SERVERY</li>
+                            <li>Lead architect to embed IMS tools in Facebook</li>
+                            <li>Social IMS infrastructure service</li>
+                            <li>Facebook application embedding an IMS client</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">Java</span>
@@ -584,18 +583,18 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Alcatel-Lucent Research &amp; Innovation – Expert IMS &amp; IP</h4>
+                            <h4>Alcatel-Lucent Research &amp; Innovation – IMS &amp; IP expert</h4>
                             <span class="date">2005 – 2008</span>
                         </div>
-                        <p><strong>Rôle :</strong> Ingénieur R&D pour concevoir des mécanismes de traversée
-                            d'obstacles réseau (NAT, proxy HTTP...) pour clients SIP et IMS (IP Multimedia
-                            Subsystem)</p>
+                        <p><strong>Role:</strong> Research engineer to conceive and implement new traversal mechanisms
+                            in network hostilities (NAT, HTTP proxy...) for SIP and IMS clients (core network IP
+                            Multimedia Subsystem)</p>
                         <ul>
-                            <li>Rédaction de 2 brevets, cours sur la traversée NAT pour SIP, promotion de
-                                Maven pour Java.</li>
-                            <li>Extension d'un client SIP/IMS Windows Mobile avec traversée NAT via STUN,
-                                RTP sur TCP, HTTP.</li>
-                            <li>Délégué pour la collaboration avec Orange sur les services IMS.</li>
+                            <li>Wrote 2 patents and gave courses on NAT traversal for SIP, evangelized the usage of
+                                Maven for Java.</li>
+                            <li>Extended a Windows Mobile SIP/IMS client with a NAT traversal protocol using STUN, RTP
+                                over TCP, HTTP.</li>
+                            <li>Delegate for projects collaboration with Orange on IMS services.</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">C#</span>
@@ -613,16 +612,17 @@ All other rights are reserved.
 
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Alcatel CIT – Ingénieur logiciel Java</h4>
+                            <h4>Alcatel CIT – Java software engineer</h4>
                             <span class="date">2004 – 2005</span>
                         </div>
-                        <p><strong>Rôle :</strong> Ingénieur logiciel, conception et dev. d'outils Java
+                        <p><strong>Role:</strong> Software engineer to design and implement Java tools
                         </p>
                         <ul>
-                            <li>GUI Java de supervision des réseaux cœur GSM Alcatel via SSH
-                                et SNMP.</li>
-                            <li>Fork, correction et ajout de fonctionnalités sur JMeter pour la suite
-                                Prepaid Postpaid Alcatel.</li>
+                            <li>Developed a Java GUI to monitor and debug Alcatel GSM core networks through SSH
+                                and SNMP
+                                connectors.</li>
+                            <li>Forked, fixed and added features on the JMeter Java tool to use it for the Alcatel
+                                Prepaid Postpaid suite.</li>
                         </ul>
                         <div class="tech-pills">
                             <span class="tech-pills__item">Java</span>
@@ -635,17 +635,17 @@ All other rights are reserved.
                 </div>
                 <div class="timeline content-card">
                     <div class="timeline__header">
-                        <h3>École d'ingénieurs / Association EIRBOT</h3>
+                        <h3>Engineering School / EIRBOT Association</h3>
                         <span class="date">2002 – 2003</span>
                     </div>
                     <div class="timeline__sub-item">
                         <div class="timeline__sub-header">
-                            <h4>Développeur logiciel au concours Eurobot</h4>
+                            <h4>Software developer in the Eurobot contest</h4>
                         </div>
-                        <p><strong>Projet :</strong> Création de robot en équipe pluridisciplinaire.
-                            Classement : 8e sur 150 équipes.</p>
+                        <p><strong>Project:</strong> Robot creation within a multidisciplinary team. Final team rank:
+                            8th out of 150 teams.</p>
                         <ul>
-                            <li> Système de contrôle de position et guidage en environnement multi-microcontrôleur
+                            <li> Build the position control and guiding system in a multi-microcontroller environment
                             </li>
                         </ul>
                         <div class="tech-pills">
@@ -660,57 +660,57 @@ All other rights are reserved.
             <div class="columns">
                 <div class="columns__item">
                     <section id="languages">
-                        <h2>🇫🇷 Langues</h2>
+                        <h2>🇫🇷 Languages</h2>
                         <div class="content-card">
                             <dl>
-                                <dt><strong>Français :</strong></dt>
-                                <dd>langue maternelle</dd>
-                                <dt><strong>Anglais :</strong></dt>
-                                <dd>niveau professionnel</dd>
-                                <dt><strong>Japonais :</strong></dt>
-                                <dd>lecture autodidacte, niveau <a
+                                <dt><strong>French:</strong></dt>
+                                <dd>native proficiency</dd>
+                                <dt><strong>English:</strong></dt>
+                                <dd>professional proficiency</dd>
+                                <dt><strong>Japanese:</strong></dt>
+                                <dd>self-learnt basic reading, <a
                                         href="https://www.jlpt.jp/e/about/levelsummary.html">JLPT N3</a>
-                                    </dd>
+                                    level</dd>
                             </dl>
                         </div>
                         <div class="section__detail u-hidden">
-                            <h2>🇫🇷 Langues</h2>
-                            <h3>À propos du japonais</h3>
-                            <p>Intéressé par la culture japonaise et souhaitant me familiariser avec les
-                                caractères chinois et japonais, j'ai appris la lecture en autodidacte. Ayant
-                                découvert que mon niveau me permettait de passer le JLPT – Japanese Language
-                                Proficiency Test – j'ai poussé l'étude et me suis présenté en candidat libre,
-                                avec succès pour les 3 niveaux de base :</p>
+                            <h2>🇫🇷 Languages</h2>
+                            <h3>About Japanese</h3>
+                            <p>Being interested in the Japanese culture and wanting to be more familiar with Chinese
+                                and Japanese characters, I self-learnt reading Japanese. I discovered my
+                                learning could allow me to passe the first level of the JLPT - Japanese Language
+                                Proficiency Test - so I pushed the study even further and challenge myself to pass it as
+                                free candidate, with success for the 3 basic levels:</p>
                             <ul>
-                                <li>2013 : Niveau 5</li>
-                                <li>2014 : Niveau 4</li>
-                                <li>2016 : Niveau 3</li>
+                                <li>2013: Level 5</li>
+                                <li>2014: Level 4</li>
+                                <li>2016: Level 3</li>
                             </ul>
-                            <p>Je ne sais ni parler ni écrire japonais. Ma compréhension est basique,
-                                insuffisante pour suivre une conversation.</p>
+                            <p>However, I am unable to speak and write Japanese. I have basic understanding, but not
+                                enough to follow a discussion.</p>
                         </div>
                     </section>
                     <section id="education">
-                        <h2>🎓 Formation</h2>
+                        <h2>🎓 Education</h2>
                         <div class="timeline content-card">
                             <div class="timeline__header">
                                 <h3>ENSEIRB</h3>
                                 <span class="date">2001 – 2004</span>
                             </div>
                             <p>École Nationale Supérieure d'Électronique, d'Informatique et de Radiocommunications de
-                                Bordeaux. École d'ingénieurs.</p>
-                            <p>Diplôme d'ingénieur en informatique et
-                                télécommunications.</p>
+                                Bordeaux. Engineer school in France.</p>
+                            <p>Engineer degree in software engineering and
+                                telecommunications.</p>
                         </div>
                         <div class="timeline content-card">
                             <div class="timeline__header">
                                 <h3>Maths Sup / Spé<br>Pierre de Fermat</h3>
                                 <span class="date">1998 – 2001</span>
                             </div>
-                            <p>Mathématiques, Physique à Toulouse, France.</p>
+                            <p>Mathematics, Physics at Toulouse, France.</p>
                             <p>
-                                Classe préparatoire scientifique pour intégrer une école d'ingénieurs.
-                                Préparation aux concours écrits et oraux d'admission.</p>
+                                French scientific prep school to enroll in an engineering school. It prepares for
+                                competitive written and oral exams to join French engineering school.</p>
                         </div>
                     </section>
                 </div>
@@ -734,15 +734,16 @@ All other rights are reserved.
                     </section>
 
                     <section id="projects">
-                        <h2>🔨 Projets personnels</h2>
+                        <h2>🔨 Some side projects</h2>
                         <div class="content-card">
                             <p><a href="https://github.com/vhiribarren/beacon-simulator-android">Android Beacon
-                                    Simulator</a> :
-                                Simule des beacons Bluetooth LE. +30 000 téléchargements.</p>
-                            <p><a href="https://github.com/vhiribarren/advent-of-code">Advent of Code</a> :
-                                exercices algorithmiques.</p>
+                                    Simulator</a>:
+                                Simulate Bluetooth LE beacons. More than 30 000 downloads.</p>
+                            <p><a href="https://github.com/vhiribarren/advent-of-code">Advent of Code contest</a>: train
+                                my
+                                algorithm skills.</p>
                             <p><a href="https://github.com/vhiribarren/nrf52833-rgb-led-matrix-lib-rust">RGB LED
-                                    matrix Rust driver pour nRF52833</a> : piloter une matrice LED avec un BBC micro:bit.
+                                    matrix Rust driver for nRF52833</a>: manage a LED board with a BBC micro:bit chip.
                             </p>
                         </div>
                     </section>
@@ -755,7 +756,7 @@ All other rights are reserved.
     <!-- Overlay and Drawer for section details -->
     <div id="detail-overlay" class="detail-overlay"></div>
     <div id="detail-drawer" class="detail-drawer">
-        <button id="close-drawer-btn" class="close-btn" aria-label="Fermer les détails">
+        <button id="close-drawer-btn" class="close-btn" aria-label="Close details">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
