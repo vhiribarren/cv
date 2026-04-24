@@ -11,7 +11,12 @@ My resume, as a concept of interactive responsive printable web page.
 - A subtle addition of Web Component for repetitive elements.
 - Obfuscated contact information to prevent scraping.
 - Adapt to mobile devices, and paper-style like a real CV for desktop browsing.
+- Side-by-side two-page view on ultra-wide screens for an enhanced desktop experience.
 - Interactive sections that can be expanded in fullscreen.
+- English and French version, with an automatic language detection based on user's browser settings.
+- Embedded QR code to easily share the CV.
+- Smart collapsible and syncable header when embedded within an iframe.
+- Smooth-scrolling "Jump to" section navigation for quick access.
 
 ## How to view it
 
